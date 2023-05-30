@@ -1,12 +1,11 @@
-# The VacuumCleanerAgent class represents an agent that can clean dirty locations in a vacuum cleaning scenario. Let's go through each method in detail:
+# The VacuumCleanerAgent class represents an agent that can clean dirty locations in a vacuum cleaning scenario. 
+# Let's go through each method in detail:
 
 
 class VacuumCleanerAgent:
 
     def __init__(self):
-
         self.location = 'A'
-
         self.status = {'A': 'dirty', 'B': 'dirty'}
 
 
@@ -14,9 +13,7 @@ class VacuumCleanerAgent:
 # It sets the agent's current location to 'A' and initializes the status dictionary, which represents the cleanliness status of each location.
 # In this case, both locations 'A' and 'B' are initially marked as 'dirty'.
 
-
     def perceive(self):
-
         return self.location, self.status[self.location]
 
 
@@ -25,7 +22,6 @@ class VacuumCleanerAgent:
 
 
     def clean(self):
-
         self.status[self.location] = 'clean'
 
 
@@ -33,13 +29,9 @@ class VacuumCleanerAgent:
 
 
     def move(self):
-
         if self.location == 'A':
-
             self.location = 'B'
-
         else:
-
             self.location = 'A'
 
 
@@ -47,15 +39,10 @@ class VacuumCleanerAgent:
 
 
     def simple_reflex_agent(self):
-
         location, status = self.perceive()
-
         if status == 'dirty':
-
             self.clean()
-
             return f"Location {location}:Cleaned"
-
         else:
             self.move()
             return f"Location {location}:Moved"
@@ -77,27 +64,28 @@ agent = VacuumCleanerAgent()
 
 
 print(agent.simple_reflex_agent())  # Clean A
-
-
 print(agent.simple_reflex_agent())  # Clean B
 
 
-# In this scenario, both locations 'A' and 'B' are initially dirty. The agent starts at location 'A' and cleans it. The output of the first call to simple_reflex_agent will be "Location A: Cleaned". The agent then moves to location 'B' and cleans it. The output of the second call to simple_reflex_agent will be "Location B: Cleaned".
+# In this scenario, both locations 'A' and 'B' are initially dirty. 
+# The agent starts at location 'A' and cleans it. 
+# The output of the first call to simple_reflex_agent will be "Location A: Cleaned". 
+# The agent then moves to location 'B' and cleans it. The output of the second call to simple_reflex_agent will be "Location B: Cleaned".
 
 
 # Scenario 2: Only location B is dirty
-
 
 agent.status = {'A': 'clean', 'B': 'dirty'}
 
 
 print(agent.simple_reflex_agent())  # Move to B
-
-
 print(agent.simple_reflex_agent())  # Clean B
 
 
-# In this scenario, only location 'B' is dirty, while location 'A' is already clean. The agent starts at location 'A' and perceives that location 'A' is clean. It then moves to location 'B'. The output of the first call to simple_reflex_agent will be "Location A: Moved". At location 'B', the agent perceives that it is dirty and proceeds to clean it. The output of the second call to simple_reflex_agent will be "Location B: Cleaned".
+# In this scenario, only location 'B' is dirty, while location 'A' is already clean. 
+# The agent starts at location 'A' and perceives that location 'A' is clean. It then moves to location 'B'. 
+# The output of the first call to simple_reflex_agent will be "Location A: Moved". 
+# At location 'B', the agent perceives that it is dirty and proceeds to clean it. The output of the second call to simple_reflex_agent will be "Location B: Cleaned".
 
 
 # Scenario 3: Only location A is dirty
@@ -105,10 +93,7 @@ print(agent.simple_reflex_agent())  # Clean B
 
 agent.status = {'A': 'dirty', 'B': 'clean'}
 
-
 print(agent.simple_reflex_agent())  # Clean A
-
-
 print(agent.simple_reflex_agent())  # Move to B
 
 
