@@ -6,7 +6,6 @@ def printInformation(location):
 
 
 def vacuumCleaner(goalState, currentState, location):
-    # printing necessary data
     print("Goal State Required:", goalState)
     print("Vacuum is placed in Location " + location)
 
