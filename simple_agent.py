@@ -59,7 +59,6 @@ class Agent:
         self.actuator.perform_action(action)
 
 
-# Usage example
 if __name__ == '__main__':
     # Create an environment
     environment = Environment()
