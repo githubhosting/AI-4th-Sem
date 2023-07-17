@@ -18,7 +18,7 @@ allergens = {
 
 preferences = {
     "nams": ["apple", "banana"],
-    # Add more user-specific preferences here
+    "shravu": ["chicken", "egg"],
 }
 
 
