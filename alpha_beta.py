@@ -39,3 +39,12 @@ maxtrue = True
 print("The answer is: ")
 answer = fun_minmax(cd, nodevalue, alpha, beta, maxtrue, src, td)
 print(answer)
+
+
+# cd: The current depth of the tree.
+# nodevalue: The value of the current node.
+# alpha: The maximum lower bound for the maximizing player.
+# beta: The minimum upper bound for the minimizing player.
+# maxtrue: A boolean indicating if it is the turn of the maximizing player or not.
+# src: The list of values for the terminal nodes.
+# td: The target depth of the tree.
